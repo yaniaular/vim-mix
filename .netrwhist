@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/openerp/instancias/estable/7.0/herrera/herrera_mapping_data/wizard'
+let g:netrw_dirhist_2='/home/openerp/.vim/snippets'
+let g:netrw_dirhist_3='/home/openerp/.vim'

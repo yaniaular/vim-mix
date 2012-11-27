@@ -1,0 +1,243 @@
+snippet #!
+	#!/usr/bin/python
+
+snippet imp
+	import ${1:module}
+# Module Docstring
+snippet docs
+	'''
+	File: ${1:`Filename('$1.py', 'foo.py')`}
+	Author: ${2:`g:snips_author`}
+	Description: ${3}
+	'''
+snippet wh
+	while ${1:condition}:
+		${2:# code...}
+snippet for
+	for ${1:needle} in ${2:haystack}:
+		algo.$1 = $2
+
+# New Class
+snippet cl
+	class ${1:ClassName}(${2:object}):
+		"""${3:docstring for $1}"""
+		def __init__(self, ${4:arg}):
+			${5:super($1, self).__init__()}
+			self.$4 = $4
+			${6}
+# New Function
+snippet defff
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		"""${3:docstring for $1}"""
+		${4:pass}
+snippet defffff
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		${3}
+# New Method
+snippet defs
+	def ${1:mname}(self, ${2:arg}):
+		${3:pass}
+# New Property
+snippet property
+	def ${1:foo}():
+		doc = "${2:The $1 property.}"
+		def fget(self):
+			${3:return self._$1}
+		def fset(self, value):
+			${4:self._$1 = value}
+# Lambda
+snippet ld
+	${1:var} = lambda ${2:vars} : ${3:action}
+snippet .
+	self.
+snippet try Try/Except
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+snippet try Try/Except/Else
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	else:
+		${5:pass}
+snippet try Try/Except/Finally
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	finally:
+		${5:pass}
+snippet try Try/Except/Else/Finally
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	else:
+		${5:pass}
+	finally:
+		${6:pass}
+# if __name__ == '__main__':
+snippet ifmain
+	if __name__ == '__main__':
+		${1:main()}
+# __magic__
+snippet _
+	__${1:init}__${2}
+
+snippet class
+	class ${1:class_name}(osv.osv):
+		
+		'''${2:description}'''
+		
+		_name = '${3:class.name}'
+		
+		_columns = {${4:columns}}
+	
+	$1()
+
+
+snippet classw
+	class ${1:class_name}(osv.osv_memory):
+		
+		'''${2:description}'''
+		
+		_name = '${3:class.name}'
+		
+		_columns = {${4:columns}}
+	
+	$1()
+
+snippet classi
+	class ${1:class_name}(osv.osv):
+		
+		'''${2:description}'''
+		
+		_inherit = '${3:inherit.model}'
+		
+		_columns = {${4:columns}}
+	
+	$1()
+
+
+snippet classid
+	class ${1:class_name}(osv.osv):
+		
+		'''${2:description}'''
+		
+		_name = '${3:new.name}'
+
+		_inherit = '${4:inherit.model}'
+		
+		_columns = {${5:columns}}
+	
+	$1()
+
+
+snippet classip
+	class ${1:class_name}(osv.osv):
+		
+		'''${2:description}'''
+		
+		_name = '${3:new.name}'
+
+		_inherits = {${4:inherit.model}}
+		
+		_columns = {${5:columns}}
+	
+snippet boolean
+	fields.boolean('${1:string}',help='${2:field's help}'),
+
+snippet browse
+	browse(cr,uid,${1:id or list ids},context=context)
+
+snippet char
+	fields.char('${1:string}',${2:long},help='${3:field's help}'),
+
+snippet create
+	create(cr,uid,{${1:field to create record}},context=context)
+
+snippet date
+	fields.date('${1:string}',help='${2:field's help}),
+
+snippet dt
+	fields.datetime('${1:string}',help='${2:field's help}),
+
+snippet def
+	def ${1:method_name}(self,cr,uid,ids,${2:values},context=None):
+	    if context is None:
+			context = {}
+
+		return
+
+snippet default_get
+	def default_get(self,cr,uid,fields,context=None):
+		'''${1:description}''''
+		if context is None:
+			context = {}
+
+		res = super(${2:name class},self).default_get(cr,uid,fields,context=context)
+
+
+		return res
+
+snippet float
+	fields.float('${1:string}',help='${2:field's help}'),
+
+snippet function
+	fields.function(${1:method name},method=True,store=${2:True or False},fnct_inv=${2:method to write this field or None},fnct_search=${2:method to use this field as a search (if store = False) or None},'${3:string}',help='${4:field's help}'),
+
+snippet int
+	fields.integer('${1:string}',help='${2:field's help}'),
+
+snippet many2m
+	fields.many2many('${1:relation model}','${2:relation tab to create}','${3:name of the field containing the id of the current model}','${4:name of the field containing the id of the relation model}','${5:string}',help='${6:field's help}'),
+
+snippet many2o
+	fields.many2one('${1:model reference}','${2:string}',help='${3:field's help}'),
+
+snippet oerpconec
+	HOST='${1:ip address to connect}'
+	PORT=${2:net-rpc port}
+	DB='${3:data base name}'
+	USER='${4:user name}'
+	PASS='${5:user password }'
+
+	con = oerplib.OERP(
+	server=HOST,
+	database=DB,
+	port=PORT,
+	)  
+
+	con.login(USER,PASS)
+
+snippet one2m
+	fields.one2many('${1:relation model}','${2:field many2one related with my model in the relation model}','${3:string}',help='${4:field's help}'),
+
+snippet pool
+	self.pool.get('${1:model}')
+
+snippet property
+	fields.property('${1:relation model}',type='${2:field type}',help='${3:field's help}'),
+
+snippet read
+	read(cr,uid,${1:id or ids list},[${2:optional field to read}],context=context)
+
+snippet reference
+	fields.reference('${1:string}',[${2:tuples with model and string}],help='${3:field's help}'),
+
+snippet related
+	fields.related('${1:field name many2one}','${2:field name in the other model which we want to know value}','${3:string}',help='${4:field's help}'),
+
+snippet search
+	search(cr,uid,[(${1:tuple with search parameters})],context=context)
+
+snippet selection
+	fields.selection([(${1:tuple options})],help='${2:field's help}'),
+
+snippet unlink
+	unlink(cr,uid,${1:ids list},context=context)
+
+snippet write
+	write(cr,uid,${1:ids list always a list},{${2:fields to update}},context=context)
