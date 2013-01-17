@@ -153,7 +153,7 @@ snippet create
 	create(cr, uid, {${1:field to create record}}, context=context)
 
 snippet boolean
-	'${1:name}'fields.boolean('${2:string}', help='${3:field's help}'), 
+	'${1:name}':fields.boolean('${2:string}', help='${3:field's help}'), 
 
 snippet char
 	'${1:name}':fields.char('${2:string}', ${3:long}, help='${4:field's help}'), 
@@ -186,7 +186,7 @@ snippet float
 	'${1:name}':fields.float('${2:string}', help='${3:field's help}'), 
 
 snippet function
-	'${1:name}'fields.function(${2:method name}, method=True, store=${3:True or False}, fnct_inv=${3:method to write this field or None}, fnct_search=${3:method to use this field as a search (if store = False) or None}, '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.function(${2:method name}, method=True, store=${3:True or False}, fnct_inv=${3:method to write this field or None}, fnct_search=${3:method to use this field as a search (if store = False) or None}, '${4:string}', help='${5:field's help}'), 
 
 snippet int
 	'${1:name}':fields.integer('${2:string}', help='${3:field's help}'), 
@@ -228,7 +228,7 @@ snippet reference
 	'${1:name}':fields.reference('${2:string}', [${3:tuples with model and string}], help='${4:field's help}'), 
 
 snippet related
-	'${1:name}'fields.related('${2:field name many3one}', '${3:field name in the other model which we want to know value}', '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.related('${2:field name many3one}', '${3:field name in the other model which we want to know value}', '${4:string}', help='${5:field's help}'), 
 
 snippet selection
 	'${1:name}':fields.selection([(${2:tuple options})], help='${3:field's help}'), 
