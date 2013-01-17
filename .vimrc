@@ -59,6 +59,8 @@ set autoindent
 set smartindent
 set number
 set foldenable
+set colorcolumn=80
+
 "set foldcolumn=1
 cabbrev mm match ErrorMsg 
 cabbrev nm match NONE

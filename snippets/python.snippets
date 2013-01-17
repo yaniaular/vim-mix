@@ -146,56 +146,56 @@ snippet classip
 		
 		_columns = {${5:columns}}
 	
-snippet boolean
-	fields.boolean('${1:string}',help='${2:field's help}'),
-
 snippet browse
-	browse(cr,uid,${1:id or list ids},context=context)
-
-snippet char
-	fields.char('${1:string}',${2:long},help='${3:field's help}'),
+	browse(cr, uid, ${1:id or list ids}, context=context)
 
 snippet create
-	create(cr,uid,{${1:field to create record}},context=context)
+	create(cr, uid, {${1:field to create record}}, context=context)
+
+snippet boolean
+	'${1:name}'fields.boolean('${2:string}', help='${3:field's help}'), 
+
+snippet char
+	'${1:name}':fields.char('${2:string}', ${3:long}, help='${4:field's help}'), 
 
 snippet date
-	fields.date('${1:string}',help='${2:field's help}),
+	'${1:name}':fields.date('${2:string}', help='${3:field's help}), 
 
 snippet dt
-	fields.datetime('${1:string}',help='${2:field's help}),
+	'${1:name}':fields.datetime('${2:string}', help='${3:field's help}), 
 
 snippet def
-	def ${1:method_name}(self,cr,uid,ids,${2:values},context=None):
+	def ${1:method_name}(self, cr, uid, ids, ${2:values}, context=None):
 	    if context is None:
 			context = {}
 
 		return
 
 snippet default_get
-	def default_get(self,cr,uid,fields,context=None):
+	def default_get(self, cr, uid, fields, context=None):
 		'''${1:description}''''
 		if context is None:
 			context = {}
 
-		res = super(${2:name class},self).default_get(cr,uid,fields,context=context)
+		res = super(${2:name class}, self).default_get(cr, uid, fields, context=context)
 
 
 		return res
 
 snippet float
-	fields.float('${1:string}',help='${2:field's help}'),
+	'${1:name}':fields.float('${2:string}', help='${3:field's help}'), 
 
 snippet function
-	fields.function(${1:method name},method=True,store=${2:True or False},fnct_inv=${2:method to write this field or None},fnct_search=${2:method to use this field as a search (if store = False) or None},'${3:string}',help='${4:field's help}'),
+	'${1:name}'fields.function(${2:method name}, method=True, store=${3:True or False}, fnct_inv=${3:method to write this field or None}, fnct_search=${3:method to use this field as a search (if store = False) or None}, '${4:string}', help='${5:field's help}'), 
 
 snippet int
-	fields.integer('${1:string}',help='${2:field's help}'),
+	'${1:name}':fields.integer('${2:string}', help='${3:field's help}'), 
 
-snippet many2m
-	fields.many2many('${1:relation model}','${2:relation tab to create}','${3:name of the field containing the id of the current model}','${4:name of the field containing the id of the relation model}','${5:string}',help='${6:field's help}'),
+snippet many3m
+	'${1:name}':fields.many3many('${2:relation model}', '${3:relation tab to create}', '${4:name of the field containing the id of the current model}', '${5:name of the field containing the id of the relation model}', '${6:string}', help='${7:field's help}'), 
 
-snippet many2o
-	fields.many2one('${1:model reference}','${2:string}',help='${3:field's help}'),
+snippet many3o
+	'${1:name}':fields.many3one('${2:model reference}', '${3:string}', help='${4:field's help}'), 
 
 snippet oerpconec
 	HOST='${1:ip address to connect}'
@@ -205,39 +205,39 @@ snippet oerpconec
 	PASS='${5:user password }'
 
 	con = oerplib.OERP(
-	server=HOST,
-	database=DB,
-	port=PORT,
+	server=HOST, 
+	database=DB, 
+	port=PORT, 
 	)  
 
-	con.login(USER,PASS)
-
-snippet one2m
-	fields.one2many('${1:relation model}','${2:field many2one related with my model in the relation model}','${3:string}',help='${4:field's help}'),
+	con.login(USER, PASS)
 
 snippet pool
 	self.pool.get('${1:model}')
 
-snippet property
-	fields.property('${1:relation model}',type='${2:field type}',help='${3:field's help}'),
-
 snippet read
-	read(cr,uid,${1:id or ids list},[${2:optional field to read}],context=context)
+	read(cr, uid, ${1:id or ids list}, [${2:optional field to read}], context=context)
+
+snippet one4m
+	'${1:name}':fields.one4many('${2:relation model}', '${3:field many4one related with my model in the relation model}', '${4:string}', help='${5:field's help}'), 
+
+snippet property
+	'${1:name}':fields.property('${2:relation model}', string='${3:String}', type='${4:field type}', help='${5:field's help}'), 
 
 snippet reference
-	fields.reference('${1:string}',[${2:tuples with model and string}],help='${3:field's help}'),
+	'${1:name}':fields.reference('${2:string}', [${3:tuples with model and string}], help='${4:field's help}'), 
 
 snippet related
-	fields.related('${1:field name many2one}','${2:field name in the other model which we want to know value}','${3:string}',help='${4:field's help}'),
-
-snippet search
-	search(cr,uid,[(${1:tuple with search parameters})],context=context)
+	'${1:name}'fields.related('${2:field name many3one}', '${3:field name in the other model which we want to know value}', '${4:string}', help='${5:field's help}'), 
 
 snippet selection
-	fields.selection([(${1:tuple options})],help='${2:field's help}'),
+	'${1:name}':fields.selection([(${2:tuple options})], help='${3:field's help}'), 
+
+snippet search
+	search(cr, uid, [(${1:tuple with search parameters})], context=context)
 
 snippet unlink
-	unlink(cr,uid,${1:ids list},context=context)
+	unlink(cr, uid, ${1:ids list}, context=context)
 
 snippet write
-	write(cr,uid,${1:ids list always a list},{${2:fields to update}},context=context)
+	write(cr, uid, ${1:ids list always a list}, {${2:fields to update}}, context=context)

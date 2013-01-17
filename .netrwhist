@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/openerp/instancias/estable/7.0/herrera/herrera_mapping_data/wizard'
 let g:netrw_dirhist_2='/home/openerp/.vim/snippets'
 let g:netrw_dirhist_3='/home/openerp/.vim'
+let g:netrw_dirhist_4='/etc/apt'
+let g:netrw_dirhist_5='/home/openerp/madi_herrera'
+let g:netrw_dirhist_6='/home/openerp/madi_herrera/clean_data'
+let g:netrw_dirhist_7='/home/openerp/instancias/estable/7.0/vauxooinitopenerp/vauxooinitopenerp'
+let g:netrw_dirhist_8='/home/openerp/madi_herrera/clean'
+let g:netrw_dirhist_9='/home/openerp/instancias/estable/7.0/herrera/herrera_mapping_data/wizard'
