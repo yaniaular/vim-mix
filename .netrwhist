@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/openerp/instancias/estable/modules/herrera/herrera_mapping_data/wizard'
-let g:netrw_dirhist_2='/home/openerp/instancias/estable/7.0/herrera/herrera_madi_data'
-let g:netrw_dirhist_3='/home/openerp/instancias/estable/7.0/server/openerp/tools'
-let g:netrw_dirhist_4='/home/openerp/instancias/estable/7.0/herrera/herrera_mapping_data/wizard'
