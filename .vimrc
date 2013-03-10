@@ -55,6 +55,7 @@ set showmode
 set expandtab
 set ts=4
 set sw=4
+set cursorline
 set autoindent
 set smartindent
 set number
