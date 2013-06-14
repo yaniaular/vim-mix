@@ -61,6 +61,7 @@ set smartindent
 set number
 set foldenable
 set colorcolumn=80
+highlight ColorColumn ctermbg=green
 
 "set foldcolumn=1
 cabbrev mm match ErrorMsg 
@@ -70,6 +71,7 @@ cabbrev tc tabclose
 cabbrev tn tabNext
 cabbrev tp tabprevious
 cabbrev tf tabfind
+cabbrev \  gqq
 
 
 filetype plugin on
