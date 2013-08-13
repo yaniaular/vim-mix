@@ -193,7 +193,7 @@ snippet m2o
 	'${1:name}':fields.many2one('${2:model reference}', '${3:string}', help='${4:field's help}'), 
 
 snippet o2m
-	'${1:name}':fields.many2one('${2:model reference}', '${3:m2o reference}', '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.one2many('${2:model reference}', '${3:m2o reference}', '${4:string}', help='${5:field's help}'), 
 
 snippet oerpconec
 	HOST='${1:ip address to connect}'
