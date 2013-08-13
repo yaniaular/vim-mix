@@ -6,6 +6,17 @@ snippet basexml
 		</data>
 	</openerp>
 
+snippet formview
+	<record model="ir.ui.view" id="${1: view id }">
+		<field name="name">${2: view name }</field>                                    
+		<field name="model">${3: model - example: account.journal }</field>                                   
+		<field name="arch" type="xml">                                          
+			<form string="" version="7.0">
+				${4}
+			</form>
+		</field>
+	</record>
+
 snippet inheritview
 	<record model="ir.ui.view" id="${1: view id }">
 		<field name="name">${2: view name }</field>
@@ -17,18 +28,43 @@ snippet inheritview
 	</record>
 
 snippet field
-	<field name="${1}" />
+	<field name="${1: name of field }" ${2: optional }/>
 
-snippet fieldattrs
-	<field name="${1}" attrs="${2: attributes - example: {'invisible' : [('state', '=', 'opening_control')]} }" />
-
+snippet tuple
+	('${1: field }','${2: operator }',${3: compare field or expected result })
+snippet ortuple
+	'|',  ('${1: field }','${2: operator }',${3: compare field or expected result }),  ('${4: field }','${5: operator }',${6: compare field or expected result })
+snippet attrs
+	attrs="{'${1: field attribute}': [${2: tuple attribute - example: ('state', '=', 'opening_control')}]}"
+snippet domain
+	domain="[${1: tuple domain - example: ('state', '=', True)}]"
 snippet tree
-	<tree string="${1}" >
-		${2}
+	<tree string="${1}" ${2: optional }>
+		${3}
 	</tree>
+
+snippet search
+	 <search string="${1}">
+		${2}
+	</search>
+
+snippet separator
+	<separator string="${1}" ${2: optional }/>
+
+snippet group
+	<group ${1: optional - example: string="Account List" }>
+		${2}
+	</group>
+
+snippet groupcc
+	<group col="${1}" colspan="${2}">
+		${3}
+	</group>
 
 snippet xpath
 	<xpath expr="${2: expression }" position="${1: position - example: before, after, inside, replace }">
+		${3}
+	</xpath>
 
 snippet xseparatorstr
 	//separator[@string='${1}']
@@ -38,3 +74,7 @@ snippet xfieldstr
 	//field[@string='${1}']
 snippet xfieldname
 	//field[@name='${1}']
+snippet xstr
+	//${1: object }[@string='${2}']
+snippet xname
+	//${1: object }[@name='${2}']
