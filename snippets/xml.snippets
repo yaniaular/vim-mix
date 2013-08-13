@@ -1,0 +1,40 @@
+snippet basexml
+	<?xml version="1.0"?>
+	<openerp>
+	    <data>
+			${1}
+		</data>
+	</openerp>
+
+snippet inheritview
+	<record model="ir.ui.view" id="${1: view id }">
+		<field name="name">${2: view name }</field>
+		<field name="model">${3: model - example: account.journal }</field>
+		<field name="inherit_id" ref="${4: id of inherit view - example: point_of_sale.view_account_journal_pos_user_form }"/>
+		<field name="arch" type="xml">
+			${5}
+		</field>
+	</record>
+
+snippet field
+	<field name="${1}" />
+
+snippet fieldattrs
+	<field name="${1}" attrs="${2: attributes - example: {'invisible' : [('state', '=', 'opening_control')]} }" />
+
+snippet tree
+	<tree string="${1}" >
+		${2}
+	</tree>
+
+snippet xpath
+	<xpath expr="${2: expression }" position="${1: position - example: before, after, inner }">
+
+snippet xseparatorstr
+	//separator[@string='${1}']
+snippet xseparatorname
+	//separator[@name='${1}']
+snippet xfieldstr
+	//field[@string='${1}']
+snippet xfieldname
+	//field[@name='${1}']
