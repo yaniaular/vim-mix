@@ -5,7 +5,6 @@ snippet basexml
 			${1}
 		</data>
 	</openerp>
-
 snippet formview
 	<record model="ir.ui.view" id="${1: view id }">
 		<field name="name">${2: view name }</field>                                    
@@ -26,10 +25,8 @@ snippet inheritview
 			${5}
 		</field>
 	</record>
-
 snippet field
 	<field name="${1: name of field }" ${2: optional }/>
-
 snippet tuple
 	('${1: field }','${2: operator }',${3: compare field or expected result })
 snippet ortuple
@@ -42,30 +39,24 @@ snippet tree
 	<tree string="${1}" ${2: optional }>
 		${3}
 	</tree>
-
 snippet search
 	 <search string="${1}">
 		${2}
 	</search>
-
 snippet separator
 	<separator string="${1}" ${2: optional }/>
-
 snippet group
 	<group ${1: optional - example: string="Account List" }>
 		${2}
 	</group>
-
 snippet groupcc
 	<group col="${1}" colspan="${2}">
 		${3}
 	</group>
-
 snippet xpath
 	<xpath expr="${2: expression }" position="${1: position - example: before, after, inside, replace }">
 		${3}
 	</xpath>
-
 snippet xseparatorstr
 	//separator[@string='${1}']
 snippet xseparatorname
