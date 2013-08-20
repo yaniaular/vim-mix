@@ -25,8 +25,13 @@ snippet inheritview
 			${5}
 		</field>
 	</record>
+snippet label
+	<label for="${1: name of field }" />
 snippet field
 	<field name="${1: name of field }" ${2: optional }/>
+snippet labelwfield
+	<label for="${1: name of field }" />
+	<field name="${2: name of field }" ${3: optional }/>
 snippet tuple
 	('${1: field }','${2: operator }',${3: compare field or expected result })
 snippet ortuple
@@ -36,7 +41,7 @@ snippet attrs
 snippet domain
 	domain="[${1: tuple domain - example: ('state', '=', True)}]"
 snippet tree
-	<tree string="${1}" ${2: optional }>
+	<tree string="${1}" ${2: optional - example: editable="button" }>
 		${3}
 	</tree>
 snippet search
@@ -69,3 +74,7 @@ snippet xstr
 	//${1: object }[@string='${2}']
 snippet xname
 	//${1: object }[@name='${2}']
+snippet page
+	<page string="${1}"  ${2: optional - example: attrs="..." } >
+		${3: fields or other objects }
+	</page>
