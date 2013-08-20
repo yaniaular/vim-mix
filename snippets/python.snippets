@@ -148,16 +148,16 @@ snippet create
 	create(cr, uid, {${1:field to create record}}, context=context)
 
 snippet boolean
-	'${1:name}':fields.boolean('${2:string}', help='${3:field's help}'), 
+	'${1:name}':fields.boolean('${2:string}', help='${3:fields help}'), 
 
 snippet char
-	'${1:name}':fields.char('${2:string}', ${3:long}, help='${4:field's help}'), 
+	'${1:name}':fields.char('${2:string}', ${3:long}, help='${4:fields help}'), 
 
 snippet date
-	'${1:name}':fields.date('${2:string}', help='${3:field's help}), 
+	'${1:name}':fields.date('${2:string}', help='${3:fields help}), 
 
 snippet dt
-	'${1:name}':fields.datetime('${2:string}', help='${3:field's help}), 
+	'${1:name}':fields.datetime('${2:string}', help='${3:fields help}), 
 
 snippet def
 	def ${1:method_name}(self, cr, uid, ids, ${2:values}, context=None):
@@ -178,22 +178,22 @@ snippet default_get
 		return res
 
 snippet float
-	'${1:name}':fields.float('${2:string}', help='${3:field's help}'), 
+	'${1:name}':fields.float('${2:string}', help='${3:fields help}'), 
 
 snippet function
-	'${1:name}':fields.function(${2:method name}, method=True, store=${3:True or False}, fnct_inv=${3:method to write this field or None}, fnct_search=${3:method to use this field as a search (if store = False) or None}, '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.function(${2:method name}, method=True, store=${3:True or False}, fnct_inv=${4:method to write this field or None}, fnct_search=${5:method to use this field as a search (if store = False) or None}, '${6:string}', help='${7:fields help}'), 
 
 snippet int
-	'${1:name}':fields.integer('${2:string}', help='${3:field's help}'), 
+	'${1:name}':fields.integer('${2:string}', help='${3:fields help}'), 
 
 snippet m2m
-	'${1:name}':fields.many2many('${2:relation model}', '${3:relation tab to create}', '${4:name of the field containing the id of the current model}', '${5:name of the field containing the id of the relation model}', '${6:string}', help='${7:field's help}'), 
+	'${1:name}':fields.many2many('${2:relation model}', '${3:relation tab to create}', '${4:name of the field containing the id of the current model}', '${5:name of the field containing the id of the relation model}', '${6:string}', help='${7:fields help}'), 
 
 snippet m2o
-	'${1:name}':fields.many2one('${2:model reference}', '${3:string}', help='${4:field's help}'), 
+	'${1:name}':fields.many2one('${2:model reference}', '${3:string}', help='${4:fields help}'), 
 
 snippet o2m
-	'${1:name}':fields.many2one('${2:model reference}', '${3:m2o reference}', '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.one2many('${2:model reference}', '${3:m2o reference}', '${4:string}', help='${5:fields help}'), 
 
 snippet oerpconec
 	HOST='${1:ip address to connect}'
@@ -217,19 +217,19 @@ snippet read
 	read(cr, uid, ${1:id or ids list}, [${2:optional field to read}], context=context)
 
 snippet one4m
-	'${1:name}':fields.one4many('${2:relation model}', '${3:field many4one related with my model in the relation model}', '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.one4many('${2:relation model}', '${3:field many4one related with my model in the relation model}', '${4:string}', help='${5:fields help}'), 
 
 snippet property
-	'${1:name}':fields.property('${2:relation model}', string='${3:String}', type='${4:field type}', help='${5:field's help}'), 
+	'${1:name}':fields.property('${2:relation model}', string='${3:String}', type='${4:field type}', help='${5:fields help}'), 
 
 snippet reference
 	'${1:name}':fields.reference('${2:string}', [${3:tuples with model and string}], help='${4:field's help}'), 
 
 snippet related
-	'${1:name}':fields.related('${2:field name many2one}', '${3:field name in the other model which we want to know value}', '${4:string}', help='${5:field's help}'), 
+	'${1:name}':fields.related('${2:field name many2one}', '${3:field name in the other model which we want to know value}', '${4:string}', help='${5:fields help}'), 
 
 snippet selection
-	'${1:name}':fields.selection([(${2:tuple options})], help='${3:field's help}'), 
+	'${1:name}':fields.selection([(${2:tuple options})], help='${3:fields help}'), 
 
 snippet search
 	search(cr, uid, [(${1:tuple with search parameters})], context=context)
@@ -239,3 +239,6 @@ snippet unlink
 
 snippet write
 	write(cr, uid, ${1:ids list always a list}, {${2:fields to update}}, context=context)
+
+snippet raisex
+	raise osv.except_osv(_('${1:title}'), _('${2:message}'))
