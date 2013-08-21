@@ -79,30 +79,25 @@ snippet _
 	__${1:init}__${2}
 
 snippet class
-	class ${1:class_name}(osv.osv):
+	class ${1:class_name}(osv.Model):
 		
 		'''${2:description}'''
 		
 		_name = '${3:class.name}'
 		
 		_columns = {${4:columns}}
-	
-	$1()
-
 
 snippet classw
-	class ${1:class_name}(osv.osv_memory):
+	class ${1:class_name}(osv.TransientModel):
 		
 		'''${2:description}'''
 		
 		_name = '${3:class.name}'
 		
 		_columns = {${4:columns}}
-	
-	$1()
 
 snippet classi
-	class ${1:class_name}(osv.osv):
+	class ${1:class_name}(osv.Model):
 		
 		'''${2:description}'''
 		
@@ -114,7 +109,7 @@ snippet classi
 
 
 snippet classid
-	class ${1:class_name}(osv.osv):
+	class ${1:class_name}(osv.Model):
 		
 		'''${2:description}'''
 		
@@ -123,12 +118,9 @@ snippet classid
 		_inherit = '${4:inherit.model}'
 		
 		_columns = {${5:columns}}
-	
-	$1()
-
 
 snippet classip
-	class ${1:class_name}(osv.osv):
+	class ${1:class_name}(osv.Model):
 		
 		'''${2:description}'''
 		
