@@ -60,7 +60,9 @@ set autoindent
 set smartindent
 set number
 set foldenable
-set colorcolumn=80
+set colorcolumn=100
+set textwidth=99
+"set columns=99
 highlight ColorColumn ctermbg=green
 
 "set foldcolumn=1
@@ -71,7 +73,6 @@ cabbrev tc tabclose
 cabbrev tn tabNext
 cabbrev tp tabprevious
 cabbrev tf tabfind
-cabbrev \  gqq
 
 
 filetype plugin on
