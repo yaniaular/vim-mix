@@ -15,6 +15,16 @@ snippet formview
 			</form>
 		</field>
 	</record>
+snippet treeview
+	<record model="ir.ui.view" id="${1: view id }">
+		<field name="name">${2: view name }</field>                                    
+		<field name="model">${3: model - example: account.journal }</field>                                   
+		<field name="arch" type="xml">                                          
+			<tree string="" version="7.0">
+				${4}
+			</tree>
+		</field>
+	</record>
 
 snippet inheritview
 	<record model="ir.ui.view" id="${1: view id }">
@@ -40,6 +50,22 @@ snippet attrs
 	attrs="{'${1: field attribute}': [${2: tuple attribute - example: ('state', '=', 'opening_control')}]}"
 snippet domain
 	domain="[${1: tuple domain - example: ('state', '=', True)}]"
+snippet action
+	<record model="ir.actions.act_window" id="${1: action_id}">
+	  <field name="name">${2: name}</field>
+	  <field name="res_model">${3: model}</field>
+	  <field name="view_type">form</field>
+	  <field name="vies_mode">tree,form</field>
+	</record>
+snippet act
+	<act_window name="${1: Name}"
+		key2="client_action_multi"                                             
+		res_model="${2: model action}"                                
+		src_model="${3: model menu}"                                            
+		view_type="form"                                                       
+		view_mode="form"                                                       
+		target="new"                                                           
+		id="${4: Menu ID}"/> 
 snippet tree
 	<tree string="${1}" ${2: optional - example: editable="button" }>
 		${3}
