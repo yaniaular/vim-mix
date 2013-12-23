@@ -59,6 +59,7 @@ set cursorline
 set autoindent
 set smartindent
 set number
+set clipboard=unnamedplus
 set foldenable
 set colorcolumn=100
 set textwidth=99
@@ -86,3 +87,4 @@ map <silent> <F6> :NERDTreeToggle<CR>
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
+
